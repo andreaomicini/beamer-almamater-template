@@ -1,5 +1,7 @@
 # beamer-almamater-template
 
+![almamater Beamer template logo](logo/almamater-template-full.svg)
+
 > A ready-to-use presentation skeleton for the
 > [almamater](https://github.com/andreaomicini/beamer-almamater) Beamer style, built once per preset
 
