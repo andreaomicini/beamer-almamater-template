@@ -1,0 +1,4 @@
+[submodule ".style"]
+	path = .style
+	url = ../beamer-almamater.git
+	branch = main

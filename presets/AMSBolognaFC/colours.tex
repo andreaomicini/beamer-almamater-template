@@ -1,0 +1,25 @@
+%/////////
+\begin{frame}[c,fragile]{Colours}
+%
+The palette is Bologna FC's, and every colour has its own role:
+\textcolor{bolognafcblue}{\textit{blue}} structures, \textcolor{bolognafcred}{\textit{red}} marks,
+\textcolor{bolognafcsilver!70!black}{\textit{silver}} reads over the dark surfaces
+%
+\begin{exampleblock}{The four that carry the style}
+\footnotesize
+\begin{tabular}{@{}llll@{}}
+\swatch{bolognafcblue}   & \texttt{bolognafcblue}   & \texttt{\#1A2F48} & text, title, block headers, emphasis, \textsc{toc} \\
+\swatch{bolognafcred}    & \texttt{bolognafcred}    & \texttt{\#A21C26} & author, bullets, alerts, links \\
+\swatch{bolognafcsilver} & \texttt{bolognafcsilver} & \texttt{\#ECECEC} & over dark: header titles, \texttt{\textbackslash{}ccite}, \texttt{\textbackslash{}aalert} \\
+\swatch{bolognafcwhite}  & \texttt{bolognafcwhite}  & \texttt{\#FFFFFF} & the background \\
+\end{tabular}
+\end{exampleblock}
+%
+\begin{itemize}
+	\item all four are defined by \texttt{beamercolorthemebolognafc.sty}, which the theme loads
+	\begin{itemize}
+		\item so a deck can use them as any other colour, as in \verb|\textcolor{bolognafcred}{...}|
+	\end{itemize}
+\end{itemize}
+%
+\end{frame}

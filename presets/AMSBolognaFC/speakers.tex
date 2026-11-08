@@ -1,0 +1,30 @@
+%/////////
+\begin{frame}[c,fragile,allowframebreaks]{Speakers \emph{vs.} Authors}
+%
+\begin{exampleblock}{\texttt{\textbackslash{}speaker} command---e.g., \speaker{Diego Zorro}}
+\begin{itemize}
+	\item to be used within \texttt{\textbackslash{}author} standard Beamer command to single out the actual speaker among the authors
+	\item in bold, and in a colour of its own
+	\item[e.g.] as in
+\begin{verbatim}
+	\author[Garcia \and Zorro]
+	{Sarg Garcia \and \speaker{Diego Zorro}}
+\end{verbatim}
+	\item and in the author specification of this template
+\end{itemize}
+\end{exampleblock}
+%
+\begin{block}{\texttt{\textbackslash{}sspeaker} command---e.g., \sspeaker{Diego Zorro}}
+\begin{itemize}
+	\item to be used within \texttt{\textbackslash{}author} standard Beamer command to single out the actual speaker among the authors in the short form
+	\item in bold, and in the colour of the surface it sits on---light on the footline, as below
+	\item[e.g.] as in
+\begin{verbatim}
+	\author[Garcia \and \sspeaker{Zorro}]
+	{Sarg Garcia \and \speaker{Diego Zorro}}
+\end{verbatim}
+	\item and in the author specification of this template
+\end{itemize}
+\end{block}
+
+\end{frame}

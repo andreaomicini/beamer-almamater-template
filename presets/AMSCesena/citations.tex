@@ -1,0 +1,35 @@
+%/////////
+\begin{frame}[c,allowframebreaks,fragile]{Citations}
+%
+\begin{block}{\texttt{\textbackslash{}ccite} command\textemdash{}e.g., \ccite{bibtex-patashnik88}}
+\begin{verbatim}
+\ccite{bibtex-patashnik88}
+\end{verbatim}
+\begin{itemize}
+	\item to be used instead of standard \texttt{\textbackslash{}cite} command
+	\item its colour comes from the surface: light on a dark header, as here above
+	\item can be used as a note\ccite{bibtex-patashnik88}, with no space before\textemdash{}faint in running text, by design
+	\item since style 1.6.1 it takes the optional note of \texttt{\textbackslash{}cite}\ccite[p.~42]{bibtex-patashnik88}
+	\begin{itemize}
+		\item as here above, from \verb|\ccite[p.~42]{bibtex-patashnik88}|
+	\end{itemize}
+\end{itemize}
+\end{block}
+%
+\begin{exampleblock}{\texttt{\textbackslash{}ccite} in an \texttt{exampleblock} header\textemdash{}e.g., \ccite[p.~42]{bibtex-patashnik88}}
+\begin{itemize}
+	\item light, as on every dark header
+\end{itemize}
+\end{exampleblock}
+%
+\begin{alertblock}{\texttt{\textbackslash{}cccite} command\textemdash{}e.g., \cccite{bibtex-patashnik88}}
+\begin{itemize}
+	\item since style 1.1 the same as \texttt{\textbackslash{}ccite}
+	\begin{itemize}
+		\item a citation marker is already as small as it can be read
+		\item kept so that existing decks build as before
+	\end{itemize}
+\end{itemize}
+\end{alertblock}
+%
+\end{frame}

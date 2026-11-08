@@ -1,0 +1,561 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% almamater Beamer style / Template, one build per preset
+% Andrea Omicini
+% Alma Mater Studiorum - Università di Bologna
+% mailto:andrea.omicini@unibo.it
+%
+% This template is released into the public domain under CC0 1.0 Universal:
+% use it, adapt it and build on it freely, with no obligation to credit.
+% See the LICENSE file, or https://creativecommons.org/publicdomain/zero/1.0/
+%
+% The almamater style it uses is covered by its own licence (LPPL 1.3c):
+% https://github.com/andreaomicini/beamer-almamater
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% the preset: AMSUniBo unless the build names another (the CI builds all six, -usepretex)
+\providecommand{\almamaterpreset}{AMSUniBo}
+\input{presets/\almamaterpreset/options}
+\documentclass[presentation,\almamaterseal,apice]{beamer}\mode<presentation>{\usetheme{\almamaterpreset}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\input{presets/\almamaterpreset/preamble}
+% version -- Major.Minor[.Patch]; the release time-stamp is appended by the CI
+\newcommand{\templatemajor}{2}
+\newcommand{\templateminor}{0}
+% \templatepatch is optional: comment the next line out to release as Major.Minor
+\newcommand{\templatepatch}{0}
+\ifdefined\templatepatch{}
+  \newcommand{\templateversion}{\templatemajor.\templateminor.\templatepatch}
+\else
+  \newcommand{\templateversion}{\templatemajor.\templateminor}
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\subtitle[AMS Series Templates]
+{AMS Series Templates}
+%
+\author[\sspeaker{Omicini} \and Else]
+{\speaker{Andrea Omicini} \and Someone Else}
+%
+\institute[DISI, Univ. Bologna]
+{\url{mailto:andrea.omicini@unibo.it} \qquad \url{mailto:someone.else@unibo.it}\\
+Dipartimento di Informatica \textendash{} Scienza e Ingegneria (DISI)\\
+\textsc{Alma Mater Studiorum} \textendash{} Università di Bologna}
+%
+\date[v.\ \templateversion]{version \templateversion}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%/////////
+\frame{\titlepage}
+%/////////
+
+%%===============================================================================
+%\section*{Outline}
+%%===============================================================================
+%
+%%/////////
+%\frame[c]{\tableofcontents[hideallsubsections]}
+%%/////////
+
+%===============================================================================
+\section{Premises}
+%===============================================================================
+
+%/////////
+\begin{frame}[c]{Academic Presentations}
+%
+\begin{itemize}
+	\item technical presentations are common in the academic environment
+	\item \alert{\LaTeX{}}\footnote{\uurl{https://www.latex-project.org}} is typically used for scientific literature
+	\begin{itemize}
+		\item for better formulas, bibliography, typography, \ldots
+	\end{itemize}
+	\item so, \LaTeX{} is the most typical \emph{toolbox} for scientific presentations
+	\begin{itemize}
+		\item which easily translates into teaching presentations, too
+	\end{itemize}
+\end{itemize}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c]{Beamer}
+%
+\begin{itemize}
+	\item \alert{Beamer} is a \LaTeX{} document class for creating presentation \emph{slides}, with a wide range of \emph{templates} and a set of features for making \emph{slideshow effects}
+	\begin{description}
+		\item[repo] \uurl{https://github.com/josephwright/beamer}
+		\item[CTAN] \uurl{https://ctan.org/pkg/beamer}
+	\end{description}
+	\item even though other styles for \LaTeX{} presentations exist, Beamer is by far the best way today
+\end{itemize}
+%
+\end{frame}
+%/////////
+
+%/////////
+\input{presets/\almamaterpreset/ams}
+%%
+%/////////
+
+%/////////
+\input{presets/\almamaterpreset/aim}
+%%
+%/////////
+
+%/////////
+\begin{frame}[c]{Who}
+%
+\begin{itemize}
+	\item mostly, myself and my collaborators
+	\item everybody else, be my guest
+\end{itemize}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c]{Distribution}
+%
+\begin{block}{Public on GitHub}
+	\begin{itemize}
+		\item the style is distributed on \uurl{https://github.com/andreaomicini/beamer-almamater/}
+		\item the releases are available at \uurl{https://github.com/andreaomicini/beamer-almamater/releases}
+		\item this template is distributed on \uurl{https://github.com/andreaomicini/beamer-almamater-template/}
+	\end{itemize}
+\end{block}
+%
+\end{frame}
+%/////////
+
+%===============================================================================
+\section{Use}
+%===============================================================================
+
+%/////////
+\begin{frame}[c,fragile]{Declaration}
+%
+\begin{block}{\texttt{\textbackslash{}documentclass}}
+Your main Beamer \texttt{.tex} file should open with the declaration
+%
+% set in type rather than verbatim, so as to name this build's preset
+\par\smallskip
+{\ttfamily\hspace*{2em}\textbackslash documentclass[presentation]\{beamer\}\par
+\hspace*{4em}\textbackslash mode<presentation>\{\textbackslash usetheme\{\almamaterpreset\}\}\par}
+\smallskip
+%
+so as to use the \almamaterpreset{} preset of the almamater Beamer style
+\end{block}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c,fragile]{Bibliography Style}
+%
+\begin{block}{\texttt{apalike-AMS}}
+Your main Beamer \texttt{.tex} file should include the declaration
+\begin{verbatim}
+    \bibliographystyle{apalike-AMS}
+\end{verbatim}
+so as to use the almamater \BibTeX{} style
+\end{block}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c,fragile]{Template}
+%
+\begin{block}{\texttt{almamater-template.tex}}
+This template's sources can be used as a simple example of how to use this Beamer style
+\end{block}
+%
+\end{frame}
+%/////////
+
+
+%===============================================================================
+\section{Style}
+%===============================================================================
+
+%/////////
+\input{presets/\almamaterpreset/colours}
+%%
+%/////////
+
+%/////////
+\input{presets/\almamaterpreset/palette}
+%%
+%/////////
+
+%/////////
+\begin{frame}[c,fragile]{Blocks}
+%
+\begin{block}{This is a \texttt{block} environment}
+\begin{verbatim}
+\begin{block}{...}
+...
+\end{block}
+\end{verbatim}
+\end{block}
+%
+\begin{exampleblock}{This is an \texttt{exampleblock} environment}
+\begin{verbatim}
+\begin{exampleblock}{...}
+...
+\end{exampleblock}
+\end{verbatim}
+\end{exampleblock}
+%
+\begin{alertblock}{This is an \texttt{alertblock} environment}
+\begin{verbatim}
+\begin{alertblock}{...}
+...
+\end{alertblock}
+\end{verbatim}
+\end{alertblock}
+%
+\end{frame}
+%/////////
+
+%/////////
+\input{presets/\almamaterpreset/surfaces}
+%%
+%/////////
+
+%/////////
+\begin{frame}[c,fragile]{One Command, Every Surface}
+%
+The same source line, here and in each header and body below:\\
+\emph{emph}, \alert{alert}, \aalert{aalert}\ccite{bibtex-patashnik88}, \uurl{apice.unibo.it}, \uuurl{apice.unibo.it}
+%
+\begin{block}{\emph{emph}, \alert{alert}, \aalert{aalert}\ccite{bibtex-patashnik88}, \uurl{apice.unibo.it}, \uuurl{apice.unibo.it}}
+\emph{emph}, \alert{alert}, \aalert{aalert}\ccite{bibtex-patashnik88}, \uurl{apice.unibo.it}, \uuurl{apice.unibo.it}
+\end{block}
+%
+\begin{alertblock}{\emph{emph}, \alert{alert}, \aalert{aalert}\ccite{bibtex-patashnik88}, \uurl{apice.unibo.it}, \uuurl{apice.unibo.it}}
+\emph{emph}, \alert{alert}, \aalert{aalert}\ccite{bibtex-patashnik88}, \uurl{apice.unibo.it}, \uuurl{apice.unibo.it}
+\end{alertblock}
+%
+\begin{exampleblock}{\emph{emph}, \alert{alert}, \aalert{aalert}\ccite{bibtex-patashnik88}, \uurl{apice.unibo.it}, \uuurl{apice.unibo.it}}
+\emph{emph}, \alert{alert}, \aalert{aalert}\ccite{bibtex-patashnik88}, \uurl{apice.unibo.it}, \uuurl{apice.unibo.it}
+\end{exampleblock}
+%
+{\tiny\begin{verbatim}
+\emph{emph}, \alert{alert}, \aalert{aalert}\ccite{bibtex-patashnik88},
+\uurl{apice.unibo.it}, \uuurl{apice.unibo.it}
+\end{verbatim}} %chktex 31
+%
+\end{frame}
+%/////////
+
+%===============================================================================
+\section{New Commands}
+%===============================================================================
+
+%/////////
+\input{presets/\almamaterpreset/citations}
+%%
+%/////////
+
+%/////////
+\input{presets/\almamaterpreset/urls}
+%%
+%/////////
+
+%/////////
+\input{presets/\almamaterpreset/doi}
+%%
+%/////////
+
+%/////////
+\input{presets/\almamaterpreset/apice-addresses}
+%%
+%/////////
+
+%/////////
+\input{presets/\almamaterpreset/alert-emphasis}
+%%
+%/////////
+
+%/////////
+\input{presets/\almamaterpreset/speakers}
+%%
+%/////////
+
+%===============================================================================
+\section{New Options}
+%===============================================================================
+
+%/////////
+\begin{frame}[c,fragile,allowframebreaks]{\texttt{apice} option}
+%
+\begin{alertblock}{\texttt{apice} Beamer option}
+\begin{itemize}
+	\item the option \texttt{apice} can be used in the presentation preamble
+	\begin{itemize}
+		\item as in
+		\begin{verbatim}
+\documentclass[presentation,apice]{beamer}...
+		\end{verbatim}
+	\end{itemize}
+	\item enables the display of the \BibTeX{} field \texttt{apice}
+	\begin{itemize}
+		\item containing the relative URL of the publication on the \alert{\href{https://apice.unibo.it/}{\textsf{APICe}}} XWiki
+	\end{itemize}
+	\item properly linked to the corresponding \href{https://apice.unibo.it/}{\textsf{APICe}} page
+\end{itemize}
+\end{alertblock}
+%
+\begin{exampleblock}{Example}
+%
+The following \BibTeX{} entry in the \texttt{.bib} file with the \texttt{apice} option enabled
+%
+{\tiny\begin{verbatim}
+@manual{bibtex-patashnik88,
+    apice = {BibtexPatashnik88},
+    author = {Patashnik, Oren},
+    booktitle = {\BibTeXing},
+    organization = {CTAN, The Comprehensive TeX Archive Network},
+    title = {\BibTeX{}ing},
+    url = {https://mirrors.ctan.org/biblio/bibtex/base/btxdoc.pdf},
+    year = 1988}
+\end{verbatim}} %chktex 31
+%
+would translate into the following entry in the presentation bibliography
+%
+\begin{thebibliography}{}
+\bibitem[Patashnik, 1988]{bibtex-patashnik1988}
+Patashnik, O. (1988)
+\newblock {\bfseries {\em \BibTeX{}ing}}
+\newblock CTAN, The Comprehensive TeX Archive Network
+\newblock\apicepubpar{BibtexPatashnik88} \uuurl{https://mirrors.ctan.org/biblio/bibtex/base/btxdoc.pdf}
+\end{thebibliography}
+%
+\end{exampleblock}
+%
+\end{frame}
+%/////////
+
+%/////////
+\input{presets/\almamaterpreset/seal-options}
+%%
+%/////////
+
+%===============================================================================
+\section{Bibliography}
+%===============================================================================
+
+%/////////
+\begin{frame}[c]{Entry Types}
+%
+\begin{block}{What \texttt{apalike-AMS} adds to \texttt{apalike}}
+\begin{itemize}
+	\item every classical type\textemdash{}\texttt{@article}, \texttt{@book}, \texttt{@inproceedings}, \ldots{}\textemdash{}as in \texttt{apalike}, titles in bold
+	\item \texttt{@talk}\textemdash{}a talk, as APICe's Talks write it\ccite{impossibleconsensus-slides2016}
+	\item \texttt{@issue}\textemdash{}a whole journal issue, by its editors\ccite{agentlink3-jaamas17}
+	\item theses\textemdash{}\texttt{@phdthesis}, \texttt{@mastersthesis} with APICe's fields: supervisors, cycle, AMS e-print\ccite{sita-thesis2017}
+	\item \texttt{subtitle}\textemdash{}after the title, past a colon\ccite{agentsandmasdevelopment-book2026}
+	\item \texttt{articleno}, \texttt{numpages}\textemdash{}an article number in place of pages\ccite{lptech4mas-jaamas35}
+	\item \texttt{@webpage}\textemdash{}a web page, every field but a link optional\ccite{beamer-ctan,transformer-googleblog2017}
+	\item last line of every entry\textemdash{}the APICe marker, then the DOI, else the URL
+\end{itemize}
+\end{block}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c,fragile]{\texttt{@talk}}
+%
+\begin{block}{A talk, as APICe's Talks write it\ccite{impossibleconsensus-slides2016}}
+{\scriptsize\begin{verbatim}
+@talk{impossibleconsensus-slides2016,
+    address = {London, UK},
+    apice = {ImpossibleconsensusQcon2016},
+    author = {Howard, Heidi},
+    date = {2016-03-29},
+    howpublished = {QCon London 2016},
+    speaker = {Howard, Heidi},
+    title = {Distributed Consensus: Making Impossible Possible},
+    type = {Talk},
+    year = 2016}
+\end{verbatim}} %chktex 31
+\begin{itemize}
+	\item the venue line\textemdash{}\texttt{type}, \texttt{howpublished}, \texttt{address}, \texttt{date} written out
+	\item \texttt{speaker} only when it differs from \texttt{author}
+\end{itemize}
+\end{block}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c,fragile]{\texttt{@issue}}
+%
+\begin{block}{A whole journal issue, by its editors\ccite{agentlink3-jaamas17}}
+{\scriptsize\begin{verbatim}
+@issue{agentlink3-jaamas17,
+    apice = {Agentlink3Jaamas17},
+    editor = {Omicini, Andrea and McBurney, Peter},
+    journal = {Autonomous Agents and Multi-Agent Systems},
+    number = 3,
+    title = {{S}pecial Issue on Foundations, Advanced Topics
+             and Industrial Perspectives of Multi-agent Systems},
+    volume = 17,
+    year = 2008}
+\end{verbatim}} %chktex 31
+\begin{itemize}
+	\item editors as in \texttt{@proceedings}, journal and volume as in \texttt{@article}
+\end{itemize}
+\end{block}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c,fragile]{Theses}
+%
+\begin{block}{A thesis, with APICe's fields\ccite{sita-thesis2017}}
+{\scriptsize\begin{verbatim}
+@mastersthesis{sita-thesis2017,
+    amseprint = {13847},
+    apice = {SitaLogicmiddleware2017},
+    author = {Sita, Alberto},
+    cosupervisor = {Denti, Enrico and Calegari, Roberta},
+    cycle = {LM},
+    supervisor = {Omicini, Andrea},
+    title = {Agenti, programmazione logica e sistemi distribuiti:
+             esperimenti in JADE e tuProlog},
+    year = 2017}
+\end{verbatim}} %chktex 31
+\begin{itemize}
+	\item supervisors printed; with neither DOI nor URL, the AMS e-print links the thesis
+\end{itemize}
+\end{block}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c,fragile]{Subtitles, Article Numbers}
+%
+\begin{block}{\texttt{subtitle}\ccite{agentsandmasdevelopment-book2026}}
+{\scriptsize\begin{verbatim}
+    subtitle = {Platforms, Toolkits, Technologies},
+    title = {Agents and Multi-Agent Systems Development},
+\end{verbatim}} %chktex 31
+\begin{itemize}
+	\item the subtitle follows the title, past a colon
+\end{itemize}
+\end{block}
+%
+\begin{block}{\texttt{articleno}, \texttt{numpages}\ccite{lptech4mas-jaamas35}}
+{\scriptsize\begin{verbatim}
+    articleno = 1,
+    numpages = 67,
+    pages = {1--67},
+\end{verbatim}} %chktex 31
+\begin{itemize}
+	\item \texttt{articleno} replaces \texttt{pages}, and \texttt{numpages} follows it\textemdash{}\emph{article 1, 67 pages}
+\end{itemize}
+\end{block}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c,fragile]{\texttt{@webpage}}
+%
+\begin{block}{A web page\textemdash{}also \texttt{@online}, \texttt{@www}, \texttt{@electronic}}
+{\tiny\begin{verbatim}
+@webpage{beamer-ctan,
+    title = {beamer},
+    url = {https://ctan.org/pkg/beamer}}
+
+@webpage{transformer-googleblog2017,
+    apice = {TransformerGoogleblog2017},
+    author = {Uszkoreit, Jakob},
+    organization = {Google Research},
+    title = {Transformer: A Novel Neural Network Architecture
+             for Language Understanding},
+    url = {https://ai.googleblog.com/2017/08/transformer-novel-neural-network.html},
+    year = 2017}
+\end{verbatim}} %chktex 31
+\end{block}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c]{\texttt{@webpage}: Who, Title}
+%
+\begin{block}{What comes first}
+\begin{itemize}
+	\item every field but a link optional\textemdash{}nothing to invent for a bare page\ccite{beamer-ctan}
+	\item first the author, else \texttt{organization}, with the year\ccite{transformer-googleblog2017}
+	\item with neither, the title opens the entry
+	\item the title in bold, \alert{as written}\textemdash{}a web page's title is usually a name
+\end{itemize}
+\end{block}
+%
+\end{frame}
+%/////////
+
+%/////////
+\begin{frame}[c]{\texttt{@webpage}: Links, Labels, Warnings}
+%
+\begin{block}{How a web page prints}
+\begin{itemize}
+	\item the URL on its own line, in the colour of a journal's name
+	\item APICe and DOI last, as for every type\textemdash{}a DOI alone is a link enough
+	\item the label is the author's, else \texttt{key}, else the organisation, else the title\textemdash{}\texttt{[beamer]}
+	\begin{itemize}
+		\item \texttt{, <year>} only when there is a year; two equal labels with none read \texttt{[Kubernetes, a]}, \texttt{[Kubernetes, b]}
+	\end{itemize}
+	\item \texttt{urldate} is not printed, as in every type
+	\item a warning only with neither \texttt{url} nor \texttt{doi}
+\end{itemize}
+\end{block}
+%
+\begin{alertblock}{No \texttt{@url}}
+\texttt{url} is a field, so \BibTeX{} cannot have a type of that name: an \texttt{@url} entry prints as \texttt{@misc}\textemdash{}write \texttt{@webpage}
+\end{alertblock}
+%
+\end{frame}
+%/////////
+
+%===============================================================================
+\section*{} 
+%===============================================================================
+
+%/////////
+\frame{\titlepage}
+%/////////
+
+%===============================================================================
+\section*{\refname}
+%===============================================================================
+
+%%%%
+\setbeamertemplate{page number in head/foot}{}
+%/////////
+%\begin{frame}[c,noframenumbering]{\refname}
+\begin{frame}[t,allowframebreaks,noframenumbering]{\refname}
+	\tiny
+%	\scriptsize
+%	\footnotesize
+	\bibliographystyle{apalike-AMS}
+	\bibliography{almamater-template}
+\end{frame}
+%/////////
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
